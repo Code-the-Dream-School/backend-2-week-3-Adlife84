@@ -20,5 +20,18 @@
   <%= @customer.email %>
 </p>
 
+<ul>
+<% @customer.order.each do |order| %>
+  <li>
+    <%= order.product_name %> | 
+    <%= order.product_count %> | 
+    <%= order.customer.full_name %> - 
+    <%= link_to 'Show', order %> |
+    <%= link_to 'Update', edit_order_path(order) %> |
+    <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'New Order', new_order_path %> |
 <%= link_to 'Back', customers_path %>
