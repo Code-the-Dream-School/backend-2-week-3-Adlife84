@@ -1,0 +1,9 @@
+<div>
+    <%= order.product_name %> |
+    <%= order.product_count %> |
+    <%= order.customer.full_name %> - 
+  
+    <%= link_to 'Show', order %> |
+    <%= link_to 'Update', edit_order_path(order) %> |
+    <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

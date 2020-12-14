@@ -63,6 +63,7 @@ end
   end
 
 private
+
  # Only allow a list of trusted parameters through.
  def order_params
     params.require(:order).permit(:product_name, :product_count, :customer_id)
