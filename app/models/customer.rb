@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-    has_many :order
+    has_many :orders, dependent: :destroy
     
     validates :first_name, presence: true
     validates :last_name, presence: true
